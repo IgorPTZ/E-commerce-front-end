@@ -16,6 +16,10 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient) { }
 
+  getProduct(theProductId: number) {
+
+  }
+
   getProductList(theCategoryId: number): Observable<Product[]> {
 
     const searchUrl = `${this.baseUrl}/search/findByCategoryId?id=${theCategoryId}&size=100`;

@@ -1,4 +1,9 @@
+import { ProductCategory } from 'src/app/common/product-category';
 export class Product {
+
+    id: number | undefined;
+
+    category: ProductCategory | undefined;
 
     sku: string | undefined;
 
