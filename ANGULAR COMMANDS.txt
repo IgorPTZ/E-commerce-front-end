@@ -1,0 +1,8 @@
+
+** Ng bootstrap ** (Bootstrap components)
+
+1) ng add @angular/localize (Dependency for Angular 9+)
+
+2) npm install @ng-bootstrap/ng-bootstrap
+
+3) Import NgbModule in app.module.ts and add NgbModule on imports section
