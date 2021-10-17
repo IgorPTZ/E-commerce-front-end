@@ -1,4 +1,3 @@
-import { ProductCategory } from 'src/app/common/product-category';
 
 export class Product {
 
