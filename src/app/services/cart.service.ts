@@ -41,10 +41,10 @@ export class CartService {
     }
 
     // Compute cart total price and total quantity
-    this.computCartTotals();
+    this.computeCartTotals();
   }
 
-  computCartTotals() {
+  computeCartTotals() {
     
     let totalPriceValue: number = 0;
     
