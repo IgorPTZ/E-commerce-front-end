@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { toJSDate } from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-calendar';
+import { Country } from 'src/app/common/country';
 import { Luv2ShopFormService } from 'src/app/services/luv2-shop-form.service';
 
 @Component({
@@ -19,6 +20,8 @@ export class CheckoutComponent implements OnInit {
   creditCardYears: number[] = [];
 
   creditCardMonths: number[] = [];
+
+  countries: Country[] = [];
 
   constructor(private formBuilder: FormBuilder,
               private luv2ShopFormService: Luv2ShopFormService) { }
@@ -66,7 +69,7 @@ export class CheckoutComponent implements OnInit {
 
         this.creditCardMonths = data;
       }
-    )
+    );
 
     // Populate credit card years
     this.luv2ShopFormService.getCreditCardYears().subscribe(
@@ -75,7 +78,16 @@ export class CheckoutComponent implements OnInit {
 
         this.creditCardYears = data;
       }
-    )
+    );
+
+    // Populate countries
+    this.luv2ShopFormService.getCountries().subscribe(
+      data => {
+        console.log("Retrieved countries: " + JSON.stringify(data));
+
+        this.countries = data;
+      }
+    );
   }
 
   onSubmit() {
